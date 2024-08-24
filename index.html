@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+        }
+        body{
+            background-image: url('BG.jpg');
+        }
+        .placa_preta {
+            background-image: url('placa_preta.jpg');
+            width: 100px;
+            height: 100px;
+        }
+        .placa_branca {
+            background-image: url('placa_branca.jpg');
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <tbody id="tabuleiro"></tbody>
+    </table>
+
+    <script>
+
+        let tabuleiro = [
+            [
+                {
+                    fundo: true,
+                    peca: 'torre_preta.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'cavalo_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'bispo_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'rainha_preta.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'rei_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'bispo_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'cavalo_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'torre_preta.gif',
+                },
+            ],
+            [
+                {
+                    fundo: false,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_preto.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_preto.gif',
+                },
+            ],
+            [
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+            ],
+            [
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+            ],
+            [
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+            ],
+            [
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+                {
+                    fundo: false,
+                    peca: '',
+                },
+                {
+                    fundo: true,
+                    peca: '',
+                },
+            ],
+            [
+                {
+                    fundo: true,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'peao_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'peao_branco.gif',
+                },
+            ],
+            [
+                {
+                    fundo: false,
+                    peca: 'torre_branca.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'cavalo_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'bispo_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'rainha_branca.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'rei_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'bispo_branco.gif',
+                },
+                {
+                    fundo: false,
+                    peca: 'cavalo_branco.gif',
+                },
+                {
+                    fundo: true,
+                    peca: 'torre_branca.gif',
+                },
+            ],  
+        ];
+
+        var table = document.getElementById('tabuleiro');
+
+        table.innerHTML = '';
+
+        tabuleiro.map((linha) => {
+
+            var tr = document.createElement('tr');
+
+            linha.map((coluna) => {
+                
+                var td = document.createElement('td');
+
+                if(coluna.fundo == true){
+                    td.classList.add("placa_branca");
+                }else{
+                    td.classList.add("placa_preta");
+                }
+
+                var img = document.createElement('img');
+
+                img.src = coluna.peca;
+
+                td.appendChild(img);
+
+                tr.appendChild(td);
+            });
+
+            table.appendChild(tr);
+        });
+
+    </script>
+</body>
+</html>
